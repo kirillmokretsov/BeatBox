@@ -8,15 +8,29 @@ private const val SOUNDS_FOLDER = "sample_sounds"
 
 class BeatBox(private val assets: AssetManager) {
 
-    fun loadSounds(): List<String> {
-        val soundNames = assets.list(SOUNDS_FOLDER)
-        return if (soundNames != null) {
-            Log.d(TAG, "Found ${soundNames.size} sounds")
-            soundNames.asList()
-        } else {
-            Log.e(TAG, "Could not list assets")
-            emptyList()
+    val sounds: List<Sound>
+
+    init {
+        sounds = loadSounds()
+    }
+
+    fun loadSounds(): List<Sound> {
+        val soundNames: Array<String>
+
+        try {
+            soundNames = assets.list(SOUNDS_FOLDER)!!
+        } catch (e: Exception) {
+            Log.e(TAG, "Could not list assets", e)
+            return emptyList()
         }
+
+        val sounds = mutableListOf<Sound>()
+        soundNames.forEach { filename ->
+            val assetPath = "$SOUNDS_FOLDER/$filename"
+            val sound = Sound(assetPath)
+            sounds.add(sound)
+        }
+        return sounds
     }
 
 }
