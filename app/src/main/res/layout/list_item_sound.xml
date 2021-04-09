@@ -4,6 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.github.kirillmokretsov.beatbox.SoundViewModel" />
+
+    </data>
+
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="120dp"
