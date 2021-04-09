@@ -10,8 +10,13 @@ import io.github.kirillmokretsov.beatbox.databinding.ActivityMainBinding
 import io.github.kirillmokretsov.beatbox.databinding.ListItemSoundBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var beatBox: BeatBox
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        beatBox = BeatBox(assets)
 
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
