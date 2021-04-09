@@ -2,6 +2,7 @@ package io.github.kirillmokretsov.beatbox
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,4 +23,22 @@ class MainActivity : AppCompatActivity() {
 
     private inner class SoundHolder(private val binding: ListItemSoundBinding) :
         RecyclerView.ViewHolder(binding.root)
+
+    private inner class SoundAdapter() : RecyclerView.Adapter<SoundHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SoundHolder =
+            SoundHolder(
+                DataBindingUtil.inflate(
+                    layoutInflater,
+                    R.layout.list_item_sound,
+                    parent,
+                    false
+                )
+            )
+
+        override fun onBindViewHolder(holder: SoundHolder, position: Int) {
+        }
+
+        override fun getItemCount(): Int = 0
+
+    }
 }
