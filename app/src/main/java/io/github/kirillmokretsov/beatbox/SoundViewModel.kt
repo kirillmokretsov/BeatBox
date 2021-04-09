@@ -1,6 +1,7 @@
 package io.github.kirillmokretsov.beatbox
 
 import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
 
 class SoundViewModel : BaseObservable() {
 
@@ -10,6 +11,7 @@ class SoundViewModel : BaseObservable() {
             notifyChange()
         }
 
+    @get:Bindable
     val title: String?
         get() = sound?.name
 
