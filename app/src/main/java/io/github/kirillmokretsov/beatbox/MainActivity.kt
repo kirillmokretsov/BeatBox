@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private inner class SoundHolder(private val binding: ListItemSoundBinding) :
+    private inner class SoundHolder(binding: ListItemSoundBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     private inner class SoundAdapter : RecyclerView.Adapter<SoundHolder>() {
