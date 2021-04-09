@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
             )
 
         override fun onBindViewHolder(holder: SoundHolder, position: Int) {
+            val sound = sounds[position]
+            holder.bind(sound)
         }
 
         override fun getItemCount(): Int = sounds.size
