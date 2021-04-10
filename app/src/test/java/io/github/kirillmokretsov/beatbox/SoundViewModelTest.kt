@@ -22,4 +22,9 @@ class SoundViewModelTest {
     fun exposesSoundNameAsTitle() {
         assertThat(subject.title, `is`(sound.name))
     }
+
+    @Test
+    fun callsBeatBoxPlayOnButtonClicked() {
+        subject.onButtonClicked()
+    }
 }
