@@ -1,5 +1,6 @@
 package io.github.kirillmokretsov.beatbox
 
+import android.content.res.AssetFileDescriptor
 import android.content.res.AssetManager
 import android.media.SoundPool
 import android.util.Log
@@ -34,6 +35,12 @@ class BeatBox(private val assets: AssetManager) {
             sounds.add(sound)
         }
         return sounds
+    }
+
+    private fun load(sound: Sound) {
+        val afd: AssetFileDescriptor = assets.openFd(sound.assetPath)
+        val soundId = soundsPool.load(afd, 1)
+        sound.soundId = soundId
     }
 
 }
