@@ -18,8 +18,4 @@
         <item name="android:background">@color/soothing_blue</item>
     </style>
 
-    <style name="BeatBoxButton.Strong">
-        <item name="android:textStyle">italic|bold</item>
-    </style>
-
 </resources>
