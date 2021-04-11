@@ -19,7 +19,7 @@
     </style>
 
     <style name="BeatBoxButton.Strong">
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">bold|italic</item>
     </style>
 
 </resources>
